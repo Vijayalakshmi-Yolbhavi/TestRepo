@@ -1,0 +1,72 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "extensions_IaaSDiagnostics_xmlCfg": {
+            "value": null
+        },
+        "extensions_IaaSDiagnostics_storageAccountName": {
+            "value": null
+        },
+        "extensions_IaaSDiagnostics_storageAccountKey": {
+            "value": null
+        },
+        "extensions_IaaSDiagnostics_storageAccountEndPoint": {
+            "value": null
+        },
+        "virtualMachines_app2_vm_name": {
+            "value": null
+        },
+        "virtualMachines_TestVM1_name": {
+            "value": null
+        },
+        "storageAccounts_app2diag_name": {
+            "value": null
+        },
+        "networkInterfaces_app2_vm401_name": {
+            "value": null
+        },
+        "networkInterfaces_testvm1157_name": {
+            "value": null
+        },
+        "networkSecurityGroups_app2_vm_nsg_name": {
+            "value": null
+        },
+        "networkSecurityGroups_TestVM1_nsg_name": {
+            "value": null
+        },
+        "networkSecurityGroups_app2_vm1_nsg_name": {
+            "value": null
+        },
+        "networkSecurityGroups_test_vm_rbac_nsg_name": {
+            "value": null
+        },
+        "schedules_shutdown_computevm_app2_vm_name": {
+            "value": null
+        },
+        "extensions_IaaSDiagnostics_name": {
+            "value": null
+        },
+        "securityRules_RDP_name": {
+            "value": null
+        },
+        "securityRules_HTTP_name": {
+            "value": null
+        },
+        "securityRules_HTTPS_name": {
+            "value": null
+        },
+        "virtualMachines_app2_vm_id": {
+            "value": null
+        },
+        "virtualMachines_TestVM1_id": {
+            "value": null
+        },
+        "networkInterfaces_app2_vm401_id": {
+            "value": null
+        },
+        "networkInterfaces_testvm1157_id": {
+            "value": null
+        }
+    }
+}

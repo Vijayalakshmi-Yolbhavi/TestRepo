@@ -1,0 +1,26 @@
+trigger: none
+resources:
+  repositories:
+  - repository: cloud-platform-automation-assets 
+    type: github
+    endpoint: DigitalInnovation
+    name: DigitalInnovation/cloud-platform-automation-assets
+    ref : stgacc_validation
+variables:
+- template: cloud-platform-automation-assets/azure/virtual_machine/vm_creation/pipeline_examples/azure_devops/inputs_vm.yml
+jobs:
+  - job: VM_creation
+    pool: 
+      name: selfhosted-services-01
+    steps:
+    - checkout: cloud-platform-automation-assets
+      displayName: Repo-Checkout
+    - task: AzurePowerShell@5
+      displayName: Creating_VM
+      inputs:
+        azureSubscription: 'ExponencePortal_SP'
+        ScriptType: 'FilePath'
+        ScriptPath: 'cloud-platform-automation-assets/azure/virtual_machine/vm_creation/powershell/wrapper_script_vm.ps1'
+        ScriptArguments: "-deploymentName '$(vm_deploymentName)' -availabilityOptions '$(availabilityOptions)' -osType '$(osType' -vmSize '$(vmSize)' -enableBootDiagnostics '$(enable_BootDiagnostics)' -authenticationType '$(authenticationType)' -adminUsername '$(adminUsername)' -imageType '$(imageType)' -privateImageId '$(privateImageId)' -osDiskCaching '$(osDiskCaching)' -osDiskCreateOption '$(osDiskCreateOption)' -keyVaultName '$(key-VaultName)' -ApplicationID '$(ApplicationID)' -Location '$(location)' -tag '$(tag_owner)' -vm_RG '$(vm_RG)' -nicName '$(nicName)' -storage_account_name '$(storage_account_name)' -vm_name '$(vm_name)' -nic_RG '$(nic_RG)' -key_Vault_RG '$(key-Vault_RG)' -storage_account_RG '$(storage_account_RG)' -osDiskSizeGB '$(osDiskSizeGB)'"
+        FailOnStandardError: true
+        azurePowerShellVersion: 'LatestVersion'
